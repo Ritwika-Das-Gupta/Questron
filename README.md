@@ -3,40 +3,19 @@
 # Dynamic Question Generation, Speech
 # Recognition, and Semantic Response Evaluation
 
-# 1. Resume Upload & Extraction
-## Question Generation
-- The user's resume is uploaded (PDF/DOCX).
-- Text is extracted from the resume using PDF or DOCX parsing tools.
-- The extracted data is passed to a model (usually a fine-tuned LLM) for processing.
-- The model generates questions based on the extracted resume data such as skills, experience, and education.
-- These questions are then stored in a CSV file for future use.
+# Questron: LLM-Driven AI Interview System
+# Automated Candidate Assessment Using Dynamic Question Generation, Speech Recognition, and Semantic Response Evaluation
 
-# 2. Question & Answer Generation by AI Model
-## Skills, Experience, and More ➝ Model Processing
-- The extracted data from the resume (skills, experience, etc.) is passed to the LLM or NLP model.
-- The model uses the resume data to generate interview questions for the user.
-- The model also generates ideal answers to these questions.
-- Both the questions and answers (model-generated) are saved to a CSV file for evaluation.
-
-# 3. Audio Interface for the User
-## Questions ➝ Audio Conversion
-- The generated questions are passed through a Text-to-Speech (TTS) model.
-- These questions are then played for the user as audio.
-- The user listens to the interview questions in audio format.
-
-# 4. User Responds via Audio
-## User ➝ Audio Response
-- The user listens to the questions and answers via audio.
-- The user’s audio responses are then captured.
-- These audio responses are transcribed using an Audio-to-Text (STT) model (e.g., Whisper).
-- The transcribed answers are saved to a CSV file for comparison with the model's ideal answers.
-
-# 5. Comparison and Scoring
-## Answer Comparison
-- Both the model-generated answers and the user's transcribed answers are loaded from the CSV file.
-- The answers are compared using semantic similarity (e.g., cosine similarity using sentence embeddings).
-- The comparison results in a similarity score that shows how closely the user's answer matches the model's expected answer.
-- This score provides feedback to the user on how accurately they responded to each interview question.
+"""
+Questron is an AI-powered interview system that automates the process of candidate assessment. 
+It begins with the user uploading a resume, from which key data (skills, experience, education) is extracted. 
+Based on this data, the system generates relevant interview questions and ideal model answers. 
+These questions are converted into audio using a Text-to-Speech (TTS) model, and the user listens to them before responding via audio. 
+The user's audio responses are transcribed using a Speech-to-Text (STT) model. 
+The transcribed answers are then compared with the model's ideal responses using semantic similarity scoring, 
+providing a feedback score on how accurately the user's answers align with the expected ones. 
+This system automates the entire interview process, providing a seamless and scalable way to assess candidates.
+"""
 
 
 
