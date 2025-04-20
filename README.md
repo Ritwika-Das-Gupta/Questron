@@ -1,79 +1,45 @@
-🔹 1. Resume Upload & Extraction
-User ➝ Upload resume pdf ➝ Resume
+# QUESTRON: LLM-Driven AI Interview System,
+# Automated Candidate Assessment Using
+# Dynamic Question Generation, Speech
+# Recognition, and Semantic Response Evaluation
 
-The user uploads a resume in PDF format.
+# 1. Resume Upload & Extraction
+## Question Generation
+- The user's resume is uploaded (PDF/DOCX).
+- Text is extracted from the resume using PDF or DOCX parsing tools.
+- The extracted data is passed to a model (usually a fine-tuned LLM) for processing.
+- The model generates questions based on the extracted resume data such as skills, experience, and education.
+- These questions are then stored in a CSV file for future use.
 
-Resume ➝ extract from resume ➝ Skills, Experience, Name, About, Projects done
+# 2. Question & Answer Generation by AI Model
+## Skills, Experience, and More ➝ Model Processing
+- The extracted data from the resume (skills, experience, etc.) is passed to the LLM or NLP model.
+- The model uses the resume data to generate interview questions for the user.
+- The model also generates ideal answers to these questions.
+- Both the questions and answers (model-generated) are saved to a CSV file for evaluation.
 
-A parsing module extracts structured data like:
+# 3. Audio Interface for the User
+## Questions ➝ Audio Conversion
+- The generated questions are passed through a Text-to-Speech (TTS) model.
+- These questions are then played for the user as audio.
+- The user listens to the interview questions in audio format.
 
-Skills
+# 4. User Responds via Audio
+## User ➝ Audio Response
+- The user listens to the questions and answers via audio.
+- The user’s audio responses are then captured.
+- These audio responses are transcribed using an Audio-to-Text (STT) model (e.g., Whisper).
+- The transcribed answers are saved to a CSV file for comparison with the model's ideal answers.
 
-Work experience
+# 5. Comparison and Scoring
+## Answer Comparison
+- Both the model-generated answers and the user's transcribed answers are loaded from the CSV file.
+- The answers are compared using semantic similarity (e.g., cosine similarity using sentence embeddings).
+- The comparison results in a similarity score that shows how closely the user's answer matches the model's expected answer.
+- This score provides feedback to the user on how accurately they responded to each interview question.
 
-Name and bio
 
-Projects
 
-Skills, Experience, Name, About, Projects ➝ stores in ➝ CSV file
-
-The extracted information is saved in a CSV file, which will be used later for:
-
-Question generation
-
-Comparison and scoring
-
-🔹 2. Question & Answer Generation by AI Model
-Skills, Experience, ... ➝ pass the things ➝ Skills, Experience, ... ➝ pass the text to model ➝ Model
-
-The extracted data is passed as input to an LLM (Large Language Model) or fine-tuned NLP model.
-
-Model ➝ generate ➝ Questions
-
-Based on resume data, the model generates interview questions.
-
-Model ➝ generate ➝ answers of the questions
-
-Along with the questions, model-generated answers (ideal responses) are also created.
-
-Questions ➝ stores ➝ CSV file
-
-Answers ➝ stores ➝ CSV file
-
-Both questions and model answers are stored for future evaluation.
-
-🔹 3. Audio Interface for the User
-Questions ➝ pass through ➝ Audio to Text model ➝ appearing in ➝ Audio Interface (questions)
-
-The questions are passed through a text-to-speech/audio interface, where they are played for the user.
-
-🔹 4. User Responds via Audio
-User ➝ answers in audio the ➝ Questions
-
-The user listens to questions and provides audio responses.
-
-answer pass through ➝ audio to text model ➝ whisper model ➝ answer in text format
-
-User’s audio answers are transcribed to text using Whisper (or similar STT model).
-
-stored in ➝ csv file
-
-Transcribed user answers are stored for comparison.
-
-🔹 5. Comparison and Scoring
-bring answer from this csv file ➝ compare the answer
-
-bring answer from this csv file ➝ compare the answer
-
-Both the model-generated answers and the user’s answers are loaded from CSV.
-
-compare the answer ➝ we will calculate the similarity score between the two answers
-
-A semantic similarity model (e.g., cosine similarity using sentence embeddings) is used to compare the answers.
-
-based on the score we will tell the user how accurate they are to particular question
-
-The similarity score tells the user how accurately their answer matched the model's expected response.
 
 
 
